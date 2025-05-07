@@ -1,0 +1,106 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: JetBrains Mono NL NF;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: rgba(29, 29, 31, 0.7);
+  transition-property: background-color;
+  transition-duration: .5s;
+  padding: 10px 10px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#window {
+  font-family: JetBrains Mono NL NF;
+}
+
+#clock {
+
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+  /*background-color: rgba(29, 29, 31, 0.5);
+  border-radius: 5px;*/
+
+}
+
+
+
+#workspaces {
+
+  font-weight: bold;
+  font-size: 14px;
+  font-family: JetBrains Mono NL NF;
+  padding: 1px;
+  background-color: rgba(29, 29, 31, 0.5);
+  border-radius: 10px;
+  margin: 5px 0px;
+
+}
+
+#workspaces button {
+
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  font-family: JetBrains Mono NL NF;
+  background-color: rgba(29, 29, 31, 0.9);
+  padding: 1px 5px;
+  border-radius: 7px;
+  margin: 1px 3px;
+
+}
+
+#workspaces button.active {
+
+  /*background-color: rgba(29, 29, 31, 0.5);*/
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 2px 15px;
+}
+
+#workspace button.urgent {
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+}
+
+#battery {
+  font-size: 14px;
+  font-family: JetBrains Mono NL NF;
+}
+
+#battery.warning {
+  background-color: #cc241d;
+}
+
+#battery.critical {
+  background-color: #e78a4e;
+}
+
+
+#battery.good {
+  background-color: mediumseagreen;
+}
+
+#custom-logo {
+  color: white;
+  padding: 0 10px 0 10px;
+  font-size: 20px;
+}
+
+
+#clock,
+#tray,
+#battery,
+#pulseaudio,
+#custom-suspend {
+  background-color: rgba(29, 29, 31, 0.5);
+  margin: 5px 0px;
+  padding: 3px 7px;
+  border-radius: 10px;
+}

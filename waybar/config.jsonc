@@ -1,0 +1,97 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 5, // Gaps between modules (4px)
+    "padding":10,  
+  // Choose the order of the modules
+    "modules-left": [
+        "custom/logo",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "battery",
+        "tray",
+        "clock"
+    ],
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+    "format": "{:%A %d %B %H:%M}",
+    },
+    "hyprland/workspaces":{
+        "format": "{name}",
+        "on-click": "activate"
+        //"persistent-workspaces": {
+        //     "*": 2
+              ////,"HDMI-A-1": 1
+        //}
+    },
+    "hyprland/window":{
+      "format":"{class} {title}",
+      "max-length": 80,
+      "rewrite": {
+        "firefox (.*)": " $1",
+        "(.*) nvim (.*)":" $2",
+        "kitty (.*)": "󰄛 $1", 
+        "org.pwmt.zathura (.*)":" $1",
+        "(.*) org.pwmt.zathura ":" Zathura",
+        "(.*) Yazi: (.*)": " $2",
+        "(.*) yazi (.*)": " $2",
+        "org.gnome.Nautilus (.*)": "󰀶 $1", 
+        "Brave-browser (.*)": " $1",
+        "com.obsproject.Studio OBS 31.0.0 (.*)":"󰑋 $1",
+        "vlc (.*)":"󰕼 $1",
+        "VirtualBox (.*)":"󰢔 $1",
+        "(.*) - Visual Studio Code":"󰘐 $1",
+        "nvidia-settings (.*)":" $1",
+        "peazip (.*)":" $1",
+        "nm-connection-editor (.*)":"󱤚 $1",
+        "io.mrarm.mcpelauncher-ui-qt (.*)":"󰍳 $1",
+        "Minecraft (.*)":"󰍳 Minecraft",
+        "blueman-manager (.*)":" $1" ,
+        "obsidian (.*)":"󱓵 $1",
+        "Google-chrome (.*)":" $1",
+        "chrome-www.notion.so__-Default (.*)":" $1",
+        "chrome-calendar.notion.so__-Default (.*)":" $1",
+        "com.rafaelmardojai.Blanket (.*)":"󰗅 $1" 
+      },
+    },
+  "battery": {
+      "states": {
+          "good": 95,
+          "warning": 15,
+          "critical": 30
+      },
+      "format": "{capacity}% {icon} ",
+      "format-full":  "{capacity} {icon}",
+      "format-charging": "{capacity}% 󰚥 ",
+      "format-plugged": "{capacity}% 󰚥 ",
+      "format-icons": ["", "", "", "", ""],
+      "interval": 1
+  },
+  "custom/logo":{
+    "format":"",
+    "on-click": "wofi"
+  },
+  "custom/suspend":{
+    "format":"󰒲",
+    "on-click":"systemctl suspend"
+  },
+  "pulseaudio": {
+    "format": "{volume}% 󰕾 ",
+    "format-bluetooth": "{volume}% 󰂰 ",
+    "format-muted": " 󰖁 ",
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"]
+}
+}
